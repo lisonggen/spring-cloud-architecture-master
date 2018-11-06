@@ -14,7 +14,7 @@ public class OrderService {
     @Resource
     private SpringOrderMapper springOrderMapper;
 
-    public SpringOrder selectOrderById(String orderId) {
-        return springOrderMapper.selectByOrderId(orderId);
+    public SpringOrder selectOrderById(Long orderId) {
+        return springOrderMapper.selectByPrimaryKey(orderId);
     }
 }

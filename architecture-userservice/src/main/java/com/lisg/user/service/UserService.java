@@ -1,5 +1,7 @@
 package com.lisg.user.service;
 
+import com.lisg.user.entity.SpringUser;
+import com.lisg.user.mapper.SpringUserMapper;
 import com.lisg.user.threadPool.UserInfoThreadPool;
 import com.lisg.user.threadPool.UserLoader;
 import org.apache.commons.lang.time.DateFormatUtils;
@@ -21,11 +23,14 @@ public class UserService {
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
+    @Resource
+    private SpringUserMapper springUserMapper;
+
     public String login(String userId, String password) {
         HashOperations<String, Object, Object> cityHash = redisTemplate.opsForHash();
 
         //登录成功，生成token保存在redis，并返回给客户端
-        if ("lisg".equals(userId) && "123456".equals(password)) {
+        if ("1001".equals(userId) && "123456".equals(password)) {
             Date loginTime_ = new Date();
             Date expireTime_ = DateUtils.addMinutes(loginTime_, 30);
 
@@ -40,11 +45,14 @@ public class UserService {
             System.err.println("----token: " + cityHash.get("chengdu:userToken", cacheKey));
 
             //异步加载用户信息
-            UserInfoThreadPool.submit(new UserLoader("lisg"));
+            UserInfoThreadPool.submit(new UserLoader("1001"));
             return token;
         } else {
             return "登录失败！";
         }
+    }
 
+    public SpringUser getUserInfo(String userId) {
+        return springUserMapper.selectByPrimaryKey(Long.parseLong(userId));
     }
 }

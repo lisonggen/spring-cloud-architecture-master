@@ -19,7 +19,7 @@ public class OrderController {
 
     @RequestMapping(value = "/getOrder", method = RequestMethod.GET)
     public String getOrder(@RequestParam String orderId, @RequestParam String userId) {
-        SpringOrder order = orderService.selectOrderById(orderId);
+        SpringOrder order = orderService.selectOrderById(Long.parseLong(orderId));
         return "orderId: " + order.getOrderId() + "itemId: " + order.getItemId();
     }
 
