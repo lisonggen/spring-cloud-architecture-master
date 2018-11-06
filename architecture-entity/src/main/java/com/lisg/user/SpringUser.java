@@ -1,4 +1,4 @@
-package com.lisg.user.entity;
+package com.lisg.user;
 
 import java.util.Date;
 

@@ -1,6 +1,6 @@
 package com.lisg.order.web;
 
-import com.lisg.order.entity.SpringOrder;
+import com.lisg.order.SpringOrder;
 import com.lisg.order.service.OrderService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,9 +18,9 @@ public class OrderController {
     private OrderService orderService;
 
     @RequestMapping(value = "/getOrder", method = RequestMethod.GET)
-    public String getOrder(@RequestParam String orderId, @RequestParam String userId) {
+    public SpringOrder getOrder(@RequestParam String orderId, @RequestParam String userId) {
         SpringOrder order = orderService.selectOrderById(Long.parseLong(orderId));
-        return "orderId: " + order.getOrderId() + "itemId: " + order.getItemId();
+        return order;
     }
 
     @RequestMapping(value = "/getOrderList", method = RequestMethod.GET)

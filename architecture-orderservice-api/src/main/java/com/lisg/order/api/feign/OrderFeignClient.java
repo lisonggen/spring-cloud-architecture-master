@@ -1,5 +1,6 @@
 package com.lisg.order.api.feign;
 
+import com.lisg.order.SpringOrder;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface OrderFeignClient {
 
 	@RequestMapping(value="/getOrder")
-	public String getOrder(@RequestParam("orderId") String orderId, @RequestParam("userId") String userId);
+	public SpringOrder getOrder(@RequestParam("orderId") String orderId, @RequestParam("userId") String userId);
 	
 	
 	@RequestMapping(value="/getOrderList")

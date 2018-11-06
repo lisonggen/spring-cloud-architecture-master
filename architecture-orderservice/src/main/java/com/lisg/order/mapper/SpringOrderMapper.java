@@ -1,6 +1,6 @@
 package com.lisg.order.mapper;
 
-import com.lisg.order.entity.SpringOrder;
+import com.lisg.order.SpringOrder;
 
 public interface SpringOrderMapper {
     int deleteByPrimaryKey(Long orderId);

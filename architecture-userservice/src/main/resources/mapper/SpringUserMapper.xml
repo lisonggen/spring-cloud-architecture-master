@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lisg.user.mapper.SpringUserMapper">
-  <resultMap id="BaseResultMap" type="com.lisg.user.entity.SpringUser">
+  <resultMap id="BaseResultMap" type="com.lisg.user.SpringUser">
     <id column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
     <result column="real_name" jdbcType="VARCHAR" property="realName" />
@@ -24,7 +24,7 @@
     delete from spring_user
     where user_id = #{userId,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.lisg.user.entity.SpringUser">
+  <insert id="insert" parameterType="com.lisg.user.SpringUser">
     insert into spring_user (user_id, user_name, real_name, 
       phone_number, gender, birthday, 
       create_time, update_time)
@@ -32,7 +32,7 @@
       #{phoneNumber,jdbcType=INTEGER}, #{gender,jdbcType=CHAR}, #{birthday,jdbcType=TIMESTAMP}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.lisg.user.entity.SpringUser">
+  <insert id="insertSelective" parameterType="com.lisg.user.SpringUser">
     insert into spring_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lisg.user.entity.SpringUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisg.user.SpringUser">
     update spring_user
     <set>
       <if test="userName != null">
@@ -114,7 +114,7 @@
     </set>
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.lisg.user.entity.SpringUser">
+  <update id="updateByPrimaryKey" parameterType="com.lisg.user.SpringUser">
     update spring_user
     set user_name = #{userName,jdbcType=VARCHAR},
       real_name = #{realName,jdbcType=VARCHAR},

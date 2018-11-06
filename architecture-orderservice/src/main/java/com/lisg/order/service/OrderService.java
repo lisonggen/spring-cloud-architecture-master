@@ -1,6 +1,6 @@
 package com.lisg.order.service;
 
-import com.lisg.order.entity.SpringOrder;
+import com.lisg.order.SpringOrder;
 import com.lisg.order.mapper.SpringOrderMapper;
 import org.springframework.stereotype.Service;
 

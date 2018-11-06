@@ -1,6 +1,6 @@
 package com.lisg.user.service;
 
-import com.lisg.user.entity.SpringUser;
+import com.lisg.user.SpringUser;
 import com.lisg.user.mapper.SpringUserMapper;
 import com.lisg.user.threadPool.UserInfoThreadPool;
 import com.lisg.user.threadPool.UserLoader;

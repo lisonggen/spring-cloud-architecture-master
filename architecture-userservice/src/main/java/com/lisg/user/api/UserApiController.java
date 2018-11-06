@@ -1,5 +1,6 @@
 package com.lisg.user.api;
 
+import com.lisg.order.SpringOrder;
 import com.lisg.order.api.feign.OrderFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ public class UserApiController {
     private OrderFeignClient orderFeignClient;
 
     @RequestMapping(value = "/getOrder")
-    public String getOrder(@RequestParam String orderId, @RequestParam String userId){
+    public SpringOrder getOrder(@RequestParam String orderId, @RequestParam String userId){
         return orderFeignClient.getOrder(orderId, userId);
     }
 

@@ -1,4 +1,4 @@
-package com.lisg.order.entity;
+package com.lisg.order;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
 package com.lisg.user.web;
 
 import com.lisg.order.api.feign.OrderFeignClient;
-import com.lisg.user.entity.SpringUser;
+import com.lisg.user.SpringUser;
 import com.lisg.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

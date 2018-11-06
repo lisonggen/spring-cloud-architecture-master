@@ -1,7 +1,7 @@
 package com.lisg.user.mapper;
 
 
-import com.lisg.user.entity.SpringUser;
+import com.lisg.user.SpringUser;
 
 public interface SpringUserMapper {
     int deleteByPrimaryKey(Long userId);

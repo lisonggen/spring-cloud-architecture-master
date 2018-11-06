@@ -11,6 +11,7 @@
 		<module>architecture-zuul</module>
         <module>architecture-orderservice</module>
         <module>architecture-orderservice-api</module>
+        <module>architecture-entity</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lisg.order.mapper.SpringOrderMapper">
-  <resultMap id="BaseResultMap" type="com.lisg.order.entity.SpringOrder">
+  <resultMap id="BaseResultMap" type="com.lisg.order.SpringOrder">
     <id column="order_id" jdbcType="BIGINT" property="orderId" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="item_id" jdbcType="BIGINT" property="itemId" />
@@ -27,7 +27,7 @@
     delete from spring_order
     where order_id = #{orderId,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.lisg.order.entity.SpringOrder">
+  <insert id="insert" parameterType="com.lisg.order.SpringOrder">
     insert into spring_order (order_id, user_id, item_id, 
       item_num, unit_price, sum_price, 
       create_time, create_by, update_time, 
@@ -37,7 +37,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{updateBy,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.lisg.order.entity.SpringOrder">
+  <insert id="insertSelective" parameterType="com.lisg.order.SpringOrder">
     insert into spring_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="orderId != null">
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lisg.order.entity.SpringOrder">
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisg.order.SpringOrder">
     update spring_order
     <set>
       <if test="userId != null">
@@ -137,7 +137,7 @@
     </set>
     where order_id = #{orderId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.lisg.order.entity.SpringOrder">
+  <update id="updateByPrimaryKey" parameterType="com.lisg.order.SpringOrder">
     update spring_order
     set user_id = #{userId,jdbcType=BIGINT},
       item_id = #{itemId,jdbcType=BIGINT},
