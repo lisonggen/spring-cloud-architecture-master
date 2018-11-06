@@ -1,0 +1,9 @@
+##根据spring约定优与配置的规则, 我们会去进行 {spring.application.name}-{profile}.properties
+spring:
+  application:
+    name: architecture-zuul
+  cloud:
+    config:
+      uri: http://localhost:4001/
+      profile: dev
+      label: master

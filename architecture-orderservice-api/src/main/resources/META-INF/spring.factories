@@ -1,0 +1,2 @@
+# Auto Congigure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lisg.order.api.OrderServiceApiAutoConfiguration
