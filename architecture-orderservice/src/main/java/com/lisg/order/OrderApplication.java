@@ -1,5 +1,6 @@
 package com.lisg.order;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -12,6 +13,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @EnableFeignClients        //启用代理
 @EnableCircuitBreaker    //启用断路器
 @EnableDiscoveryClient
+@MapperScan("com.lisg.order.mapper")
 @SpringBootApplication
 public class OrderApplication {
     public static void main(String[] args) {
