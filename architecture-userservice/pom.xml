@@ -32,6 +32,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+
         <!-- bus-kafka 主要就是为了使用spring cloud bus 依赖包 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
