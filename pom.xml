@@ -12,6 +12,7 @@
         <module>architecture-orderservice</module>
         <module>architecture-orderservice-api</module>
         <module>architecture-entity</module>
+        <module>architecture-zipkin</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -29,7 +30,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<fastjson.version>1.1.26</fastjson.version>
+		<fastjson.version>1.1.31</fastjson.version>
 	</properties>
 
 	<dependencies>
