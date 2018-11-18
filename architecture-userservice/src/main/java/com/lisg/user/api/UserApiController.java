@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 
@@ -14,6 +15,8 @@ import javax.annotation.Resource;
  */
 @RestController
 public class UserApiController {
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Resource
     private OrderFeignClient orderFeignClient;
@@ -25,6 +28,7 @@ public class UserApiController {
 
     @RequestMapping(value = "/getOrderList")
     public String getOrderList(@RequestParam String userId){
+//        return restTemplate.getForObject("http://architecture-orderservice/getOrderList?userId={1}", String.class, userId);
         return orderFeignClient.getOrderList(userId);
     }
 }
