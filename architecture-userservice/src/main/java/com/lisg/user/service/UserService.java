@@ -37,7 +37,7 @@ public class UserService {
             String loginTime = DateFormatUtils.format(loginTime_, "yyyyMMddHHmmss");
             String expireTime = DateFormatUtils.format(expireTime_, "yyyyMMddHHmmss");
 
-            String token = userId+"$"+loginTime;
+            String token = userId + "$" + loginTime;
             String cacheKey = "x-token" + ":" + userId;
             String cacheValue = token + ":" + expireTime;
 

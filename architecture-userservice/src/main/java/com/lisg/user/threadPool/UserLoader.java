@@ -14,14 +14,14 @@ public class UserLoader implements Runnable {
 
     private String userId;
 
-    public UserLoader(String userId){
+    public UserLoader(String userId) {
         this.userId = userId;
     }
 
     @Override
     public void run() {
         @SuppressWarnings("unchecked")
-        RedisTemplate<String, Object> redisTemplate = (RedisTemplate<String, Object>)ApplicationFactory.getBean("redisTemplate");
+        RedisTemplate<String, Object> redisTemplate = (RedisTemplate<String, Object>) ApplicationFactory.getBean("redisTemplate");
         System.err.println("-----------:" + redisTemplate);
         HashOperations<String, Object, Object> userInfoHash = redisTemplate.opsForHash();
         //比如用户登录成功,去用户表里面获取用户的角色、权限、相关的描述信息

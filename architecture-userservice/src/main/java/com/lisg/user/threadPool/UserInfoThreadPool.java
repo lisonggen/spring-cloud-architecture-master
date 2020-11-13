@@ -9,7 +9,7 @@ public class UserInfoThreadPool {
 
     private static final int QUEUE_SIZE = 10000;
 
-    private static final int THREAD_SIZE = Runtime.getRuntime().availableProcessors()/2;
+    private static final int THREAD_SIZE = Runtime.getRuntime().availableProcessors() / 2;
 
     private static ExecutorService userInfoLoader = new ThreadPoolExecutor(THREAD_SIZE,
             THREAD_SIZE,

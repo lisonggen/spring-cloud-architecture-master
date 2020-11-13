@@ -22,12 +22,12 @@ public class UserApiController {
     private OrderFeignClient orderFeignClient;
 
     @RequestMapping(value = "/getOrder")
-    public SpringOrder getOrder(@RequestParam String orderId, @RequestParam String userId){
+    public SpringOrder getOrder(@RequestParam String orderId, @RequestParam String userId) {
         return orderFeignClient.getOrder(orderId, userId);
     }
 
     @RequestMapping(value = "/getOrderList")
-    public String getOrderList(@RequestParam String userId){
+    public String getOrderList(@RequestParam String userId) {
 //        return restTemplate.getForObject("http://architecture-orderservice/getOrderList?userId={1}", String.class, userId);
         return orderFeignClient.getOrderList(userId);
     }

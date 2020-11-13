@@ -4,34 +4,35 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+
 @Component
 public class ApplicationFactory implements ApplicationContextAware {
 
-	private static ApplicationContext ctx = null;
-	
-	@Override
-	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		if(ApplicationFactory.ctx == null){
-			System.err.println("---------init------------: " + applicationContext);
-			ApplicationFactory.ctx = applicationContext;
-		}
-	}
+    private static ApplicationContext ctx = null;
 
-	public static ApplicationContext getApplicationContext(){
-		System.err.println("-------------ctx-------------: " + ctx);
-		return ctx;
-	}
-	
-	public static Object getBean(String name) {
-		return getApplicationContext().getBean(name);
-	}
-	
-	public static <T> T getBean(Class<T> clazz) {
-		return getApplicationContext().getBean(clazz);
-	}
-	
-	public static <T> T getBean(String name, Class<T> clazz) {
-		return getApplicationContext().getBean(name, clazz);
-	}
-	
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        if (ApplicationFactory.ctx == null) {
+            System.err.println("---------init------------: " + applicationContext);
+            ApplicationFactory.ctx = applicationContext;
+        }
+    }
+
+    public static ApplicationContext getApplicationContext() {
+        System.err.println("-------------ctx-------------: " + ctx);
+        return ctx;
+    }
+
+    public static Object getBean(String name) {
+        return getApplicationContext().getBean(name);
+    }
+
+    public static <T> T getBean(Class<T> clazz) {
+        return getApplicationContext().getBean(clazz);
+    }
+
+    public static <T> T getBean(String name, Class<T> clazz) {
+        return getApplicationContext().getBean(name, clazz);
+    }
+
 }
